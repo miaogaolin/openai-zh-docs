@@ -1,0 +1,16 @@
+---
+main:
+  - name: 开始
+    sub: 
+      - name: 介绍
+        ref: "/start/introduction"
+      - name: 快速入门
+        ref: "/start/quick_start"
+  - name: 指南
+    sub:
+      - name: 自动完成
+        ref: "/guides/text_completion"
+  - name: API库
+    sub:
+      - name: 自动完成
+        ref: "/api/completions"
