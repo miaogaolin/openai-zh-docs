@@ -1,6 +1,6 @@
 baseURL = "https://openai.laomiao.site"
 title = "OpenAI中文文档"
-theme = "hugo-geekdoc"
+theme = "geekdoc"
 
 pluralizeListTitles = false
 
