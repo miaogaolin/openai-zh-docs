@@ -26,11 +26,11 @@ OpenAI已经训练了最先进的语言模型，这些模型非常擅长理解�
 
 > 官网可以直接修改提示语测试，如果想测试[前往](https://platform.openai.com/docs/quickstart/start-with-an-instruction)。
 
-![](../images/1.png)
+![](/start/images/1.png)
 
 不错！现在，请尝试让您的指令更具体一些。
 
-![](../images/2.png)
+![](/start/images/2.png)
 
 正如您所看到的，将一个简单的形容词添加到我们的提示中会改变生成的完成结果。设计提示本质上就是“编程”模型的方式。
 
@@ -38,14 +38,14 @@ OpenAI已经训练了最先进的语言模型，这些模型非常擅长理解�
 设计好的指令对于获得良好的结果非常重要，但有时这并不足够。让我们试着让您的指令更加复杂。
 
 
-![](../images/3.png)
+![](/start/images/3.png)
 
 这个补全结果不太符合我们的要求。这些名字非常普通，而且似乎模型没有注意到我们指定的“马”的部分。让我们看看是否可以让它提供更相关的建议。
 
 在许多情况下，展示和告诉模型你想要什么是很有帮助的。在你的提示中添加示例可以帮助传达模式或细微差别。尝试提交这个包含一些例子的提示。
 
 " 如果该图片的实例不能够让你替换到差异，建议自己在[官网](https://platform.openai.com/docs/quickstart/add-some-examples)试试。
-![](../images/4.png)
+![](/start/images/4.png)
 
 不错！通过添加一些输入和期望输出的例子，帮助模型提供了我们所需要的类型的名字。
 ## 调整设置
@@ -56,7 +56,7 @@ OpenAI已经训练了最先进的语言模型，这些模型非常擅长理解�
 
 尝试将相同的提示重新提交几次，并将温度设置为1。
 
-![](../images/5.png)
+![](/start/images/5.png)
 
 看到发生了什么了吗？
 
@@ -70,17 +70,17 @@ OpenAI已经训练了最先进的语言模型，这些模型非常擅长理解�
 
 我们的模型通过将文本分解成称为标记的较小单元来处理文本。标记可以是单词、单词块或单个字符。编辑下面的文本以查看其如何被分词。
 
-![](../images/6.png)
+![](/start/images/6.png)
 
 常见的单词如“cat”是一个单一的标记，而不常见的单词通常被分解成多个标记。例如，“Butterscotch”被翻译成四个标记：“But”，“ters”，“cot”和“ch”。许多标记以空格开头，例如“ hello”和“ bye”。
 
 给定一些文本，模型会确定哪个单元最有可能出现在文本的下一个位置。例如，“Horses are my favorite”文本最可能紧随着“ animal”这个单元。
 
-![](../images/7.png)
+![](/start/images/7.png)
 
 这就是温度（temperature）发挥作用的地方。如果你使用温度为0的设置，多次提交此提示，模型总会返回“animal”，因为它具有最高的概率。如果你增加温度，模型将更冒险，并考虑概率较低的标记。
 
-![](../images/8.png)
+![](/start/images/8.png)
 
 通常情况下，对于输出明确定义的任务，最好设置较低的温度。如果需要多样性或创造力，则较高的温度可能会有所帮助，或者如果您想要生成几种变化以供最终用户或人类专家选择。
 
@@ -109,7 +109,7 @@ cp .env.example .env
 
 如果没有 API 密钥，请[前往官网](https://platform.openai.com/docs/quickstart/build-your-application)创建一个，如图位置：
 
-![](../images/9.png)
+![](/start/images/9.png)
 
 **重要提示：在使用Javascript时，所有API调用都应仅在服务器端进行，因为在客户端浏览器代码中进行调用将会暴露您的API密钥。有关更多详细信息，请[参见此处](https://platform.openai.com/docs/api-reference/authentication)。**
 
