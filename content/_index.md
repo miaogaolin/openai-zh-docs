@@ -1,1 +1,0 @@
-借助 ChatGPT 对 OpenAI[官方文档](https://platform.openai.com/docs)进行翻译。
