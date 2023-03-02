@@ -8,6 +8,8 @@ main:
         ref: "/start/quick_start"
       - name: 代码库
         ref: "/start/libraries"
+      - name: 模型
+        ref: "/start/models"
   - name: 指南
     sub:
       - name: 自动完成
