@@ -6,6 +6,8 @@ main:
         ref: "/start/introduction"
       - name: 快速入门
         ref: "/start/quick_start"
+      - name: 代码库
+        ref: "/start/libraries"
   - name: 指南
     sub:
       - name: 自动完成
