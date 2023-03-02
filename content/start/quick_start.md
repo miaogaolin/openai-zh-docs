@@ -122,6 +122,51 @@ npm run dev
 
 在浏览器中打开 [http://localhost:3000](http://localhost:3000)，您应该可以看到宠物名字生成器！
 
+### 分析代码
+
+打开 `openai-quickstart-node/pages/api` 文件夹中的 `generate.js` 文件。在底部，你会看到生成上述 prompt 的函数。由于用户将输入宠物的动物类型，因此它会动态替换指定动物部分的 prompt。
+```js
+function generatePrompt(animal) {
+  const capitalizedAnimal = animal[0].toUpperCase() + animal.slice(1).toLowerCase();
+  return `Suggest three names for an animal that is a superhero.
+
+Animal: Cat
+Names: Captain Sharpclaw, Agent Fluffball, The Incredible Feline
+Animal: Dog
+Names: Ruff the Protector, Wonder Canine, Sir Barks-a-Lot
+Animal: ${capitalizedAnimal}
+Names:`;
+}
+```
+在 `generate.js` 文件的第 9 行，您会看到发送实际 API 请求的代码。如上所述，它使用了温度为 0.6 的 completions 端点。
+
+```js
+const completion = await openai.createCompletion({
+  model: "text-davinci-003",
+  prompt: generatePrompt(req.body.animal),
+  temperature: 0.6,
+});
+```
+完成了！你现在应该完全了解你的（超级英雄）宠物名字生成器是如何使用 OpenAI API 的了！
 ## 结束
+这些概念和技术将有助于您构建自己的应用程序。尽管如此，这个简单的例子只展示了 OpenAI API 可能性的一小部分！完成端点足够灵活，可以解决几乎任何语言处理任务，包括内容生成、摘要、语义搜索、主题标记、情感分析等等。
+
+需要记住的一个限制是，对于大多数模型，单个 API 请求只能在您的提示和完成之间处理最多 2,048 个令牌（大约 1,500 个单词）。
+
+> ### 模型和价格
+> 我们提供不同能力和价格点的模型。在本教程中，我们使用了text-davinci-003，这是我们最强大的自然语言模型。我们建议在进行实验时使用此模型，因为它将产生最佳结果。一旦您使事情正常运行，您可以看看其他模型是否可以以更低的延迟和成本产生相同的结果。
+> 
+> 单个请求中处理的令牌总数（包括提示和完成）不能超过模型的最大上下文长度。对于大多数模型，这是2048个标记或约1500个单词。作为一个粗略的经验法则，1个标记约为4个字符或0.75个英文单词。
+> 
+> 定价是按每1000个令牌的使用量计费，前3个月可以使用18美元的免费信用，[了解更多信息](https://openai.com/api/pricing/)。
+
+对于更高级的任务，你可能会希望提供比单个提示中可以容纳的更多的示例或上下文。[微调API](https://platform.openai.com/docs/guides/fine-tuning)是处理这类更高级任务的绝佳选择。微调API允许你提供数百甚至数千个示例，以自定义模型以适应你的具体用例。
 
 ## 下一步
+
+为了获取灵感并了解更多关于为不同任务设计提示的信息：
+
+* 阅读我们的[完成指南](https://platform.openai.com/docs/guides/completion)。
+* 探索我们的[示例提示库](https://platform.openai.com/examples)。
+* 在 [Playground](https://platform.openai.com/playground) 中开始实验。
+* 在开始构建时请记住我们的[使用政策](https://platform.openai.com/docs/usage-policies)。
