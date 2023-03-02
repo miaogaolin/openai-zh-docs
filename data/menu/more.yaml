@@ -1,6 +1,6 @@
 ---
 more:
   - name: "Github"
-    ref: "https://github.com/miaogaolin/openai-zh-docsc"
+    ref: "https://github.com/miaogaolin/openai-zh-docs"
     external: true
     icon: "gdoc_github"
