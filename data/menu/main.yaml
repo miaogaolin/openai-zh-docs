@@ -10,6 +10,8 @@ main:
         ref: "/start/libraries"
       - name: 模型
         ref: "/start/models"
+      - name: 教程
+        ref: "/start/tutorials"
   - name: 指南
     sub:
       - name: 自动完成

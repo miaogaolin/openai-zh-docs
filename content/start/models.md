@@ -1,4 +1,6 @@
-# 模型
+---
+title: 模型
+---
 ## 概述
 
 OpenAI API由不同功能和价格点的各种模型驱动。您还可以通过[微调](https://platform.openai.com/docs/guides/fine-tuning)对我们原始的基础模型进行有限的自定义，以适应您的特定用例。
